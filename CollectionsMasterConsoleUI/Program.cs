@@ -47,7 +47,7 @@ namespace CollectionsMasterConsoleUI
             //TODO: Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
             Console.WriteLine("Multiple of three = 0: ");
             ThreeKiller(bigArray);
-            Console.WriteLine(bigArray);
+            NumberPrinter(bigArray);
 
             Console.WriteLine("-------------------");
 
@@ -83,14 +83,11 @@ namespace CollectionsMasterConsoleUI
             Console.WriteLine("What number will you search for in the number list?");
             var searchNumber = Console.ReadLine();
             int theNumber;
-            if (int.TryParse(searchNumber, out theNumber))
-            {
-             NumberChecker(numbers, theNumber);
-            }
-            else
-            {
-                Console.WriteLine("Oops, that wasn't a number!");
-            }
+            int.TryParse(searchNumber, out theNumber);
+            
+            NumberChecker(numbers, theNumber);
+            
+           
             Console.WriteLine("-------------------");
 
             Console.WriteLine("All Numbers:");
@@ -163,6 +160,10 @@ namespace CollectionsMasterConsoleUI
                     Console.WriteLine("Your number is in the list!");
                     break;
                 }
+                 else
+            {
+                Console.WriteLine("Oops, that wasn't a number!");
+            }
             }   
 
         }
